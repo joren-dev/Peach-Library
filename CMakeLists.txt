@@ -4,6 +4,9 @@ project(PeachLibrary)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_library(PeachLibrary STATIC pe_exceptions/pe_exception.cpp)
+add_library(PeachLibrary STATIC
+        pe_exceptions/pe_exception.cpp
+        memory_pool/pe_memory_pool.cpp
+        )
 
 set_target_properties(PeachLibrary PROPERTIES LINKER_LANGUAGE CXX)
