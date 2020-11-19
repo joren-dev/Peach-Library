@@ -1,7 +1,9 @@
 #ifndef PE_EXCEPTION_SAFETY_HPP
 #define PE_EXCEPTION_SAFETY_HPP
 
+#include <concepts>
 #include <ostream>
+#include <type_traits>
 
 namespace peach::detail
 {

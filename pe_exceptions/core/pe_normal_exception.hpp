@@ -1,7 +1,10 @@
 #ifndef PE_NORMAL_EXCEPTION_HPP
 #define PE_NORMAL_EXCEPTION_HPP
 
+#include <ctime>
+#include <fstream>
 #include <string>
+#include <string_view>
 #include <utility>
 
 #include "pe_base_exception.hpp"
@@ -31,7 +34,7 @@ namespace peach::detail
     pe_normal_exception& operator=( const pe_normal_exception& ) = delete;
     // clang-format on
 
-    bool output_to_file( ) const override;
+    bool output_to_file( std::ofstream& output_file ) const override;
     void print_to_console( ) const override;
 
     ~pe_normal_exception( ) = default;
