@@ -4,6 +4,15 @@
 #include <string>
 
 #include "core/pe_normal_exception.hpp"
+#include "utils/pe_exception_safety.hpp"
+
+#include <type_traits>
+#include <utility>
+
+namespace peach::detail
+{
+
+} // namespace peach::detail
 
 namespace peach::detail
 {
