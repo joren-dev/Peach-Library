@@ -5,7 +5,6 @@
 
 using namespace peach::detail;
 
-
 bool pe_normal_exception::output_to_file( ) const
 {
   // TODO: output to file!

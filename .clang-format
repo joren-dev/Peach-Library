@@ -12,7 +12,7 @@ BraceWrapping:
   AfterExternBlock: 'true'
   BeforeCatch: 'true'
 
-ColumnLimit: 125
+ColumnLimit: 100
 BreakInheritanceList: AfterColon
 CompactNamespaces: 'false'
 ConstructorInitializerAllOnOneLineOrOnePerLine: 'true'

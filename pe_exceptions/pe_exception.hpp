@@ -9,7 +9,8 @@ namespace peach::detail
 {
 
   template< typename... Tys >
-  pe_normal_exception throw_exception( const std::size_t line_num, const std::string file_name, Tys&&... error_message )
+  pe_normal_exception throw_exception( const std::size_t line_num, const std::string file_name,
+                                       Tys&&... error_message )
   {
     return pe_normal_exception { line_num, file_name, std::forward< Tys >( error_message )... };
   }

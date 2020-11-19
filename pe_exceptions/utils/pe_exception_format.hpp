@@ -12,7 +12,8 @@ namespace peach::detail
   {
     std::stringstream ss { };
 
-    ss << "Exception occurred on line: " << line_num << " in file: " << file_name << ".\nError details: ";
+    ss << "Exception occurred on line: " << line_num << " in file: " << file_name
+       << ".\nException details: ";
     ( ( ss << std::forward< Tys >( args ) << ' ' ), ... );
 
     return ss.str( );

@@ -16,8 +16,10 @@ namespace peach::detail
   {
   public:
     template< typename... Tys >
-    explicit pe_normal_exception( const std::size_t line_num, const std::string& file_name, Tys&&... args )
-        : m_err_msg( format_error( line_num, file_name, std::forward< Tys >( args )... ) ), std::runtime_error { m_err_msg }
+    explicit pe_normal_exception( const std::size_t line_num, const std::string& file_name,
+                                  Tys&&... args )
+        : m_err_msg( format_error( line_num, file_name, std::forward< Tys >( args )... ) ),
+          std::runtime_error { m_err_msg }
     {
     }
 
