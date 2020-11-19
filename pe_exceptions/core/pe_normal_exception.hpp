@@ -17,11 +17,9 @@ namespace peach::detail
   public:
     template< typename... Tys >
     explicit pe_normal_exception( const std::size_t line_num, const std::string& file_name, Tys&&... args )
-        : std::runtime_error { init( format_error( line_num, file_name, std::forward< Tys >( args )... ) ) }
+        : m_err_msg( format_error( line_num, file_name, std::forward< Tys >( args )... ) ), std::runtime_error { m_err_msg }
     {
     }
-
-    std::string init( const std::string& exception_msg );
 
     // clang-format off
     pe_normal_exception( const pe_normal_exception& ) noexcept = default;
@@ -31,12 +29,13 @@ namespace peach::detail
     pe_normal_exception& operator=( const pe_normal_exception& ) = delete;
     // clang-format on
 
-    std::string m_err_msg;
-
     bool output_to_file( ) const override;
     void print_to_console( ) const override;
 
     ~pe_normal_exception( ) = default;
+
+  private:
+    const std::string m_err_msg;
   };
 
 } // namespace peach::detail

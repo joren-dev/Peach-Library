@@ -5,11 +5,6 @@
 
 using namespace peach::detail;
 
-std::string pe_normal_exception::init( const std::string& exception_msg )
-{
-  m_err_msg = exception_msg;
-  return m_err_msg;
-}
 
 bool pe_normal_exception::output_to_file( ) const
 {
