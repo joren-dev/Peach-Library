@@ -23,7 +23,7 @@ namespace peach::detail
     // clang-format on
 
     virtual std::string get_error( ) const noexcept = 0;
-    virtual void print_to_console( ) const = 0;
+    virtual void print_to_console( ) const noexcept = 0;
 
     virtual ~pe_base_exception( ) { };
   };

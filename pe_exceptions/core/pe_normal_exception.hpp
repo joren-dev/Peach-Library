@@ -35,7 +35,7 @@ namespace peach::detail
     // clang-format on
 
     std::string get_error( ) const noexcept override;
-    void print_to_console( ) const override;
+    void print_to_console( ) const noexcept override;
 
     ~pe_normal_exception( ) = default;
 
