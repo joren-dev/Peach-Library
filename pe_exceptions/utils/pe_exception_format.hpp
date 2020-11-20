@@ -22,9 +22,9 @@ namespace peach::detail
     localtime_s( &current_time, &t );
 
     ss << std::put_time( &current_time, "[%T]" )
-       << " at LINE:FILE " << line_num << " : " << file_name << " ->\n\t\t{ ";
+       << " at (line:file) " << line_num << " : " << file_name << " ->\n\t\t{ ";
     ( ( ss << std::forward< Tys >( args ) << ' ' ), ... );
-    ss << " }\n";
+    ss << " }\n\n";
 
     return ss.str( );
   }

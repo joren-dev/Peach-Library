@@ -8,7 +8,8 @@ using namespace peach::detail;
 void pe_normal_exception::print_to_console( ) const noexcept
 {
   // TODO: possibly determine if compiled application has a console available!
-  std::cerr << "pe_normal_exception{ " << m_err_msg << " }\n";
+  std::cerr << R"(pe_normal_exception( " )" << m_err_msg.substr( 0, m_err_msg.size( ) - 2 )
+            << R"( " ))" << '\n';
 }
 
 // clang-format off
