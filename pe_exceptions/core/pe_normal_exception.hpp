@@ -34,7 +34,7 @@ namespace peach::detail
     pe_normal_exception& operator=( const pe_normal_exception& ) = delete;
     // clang-format on
 
-    bool output_to_file( std::ofstream& output_file ) const override;
+    std::string get_error( ) const noexcept override;
     void print_to_console( ) const override;
 
     ~pe_normal_exception( ) = default;

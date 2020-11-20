@@ -5,18 +5,15 @@
 
 using namespace peach::detail;
 
-bool pe_normal_exception::output_to_file( std::ofstream& output_file ) const
-{
-  if ( output_file.fail( ) || !output_file.is_open( ) )
-    return false;
-
-  output_file << m_err_msg;
-
-  return true;
-}
-
 void pe_normal_exception::print_to_console( ) const
 {
   // TODO: possibly determine if compiled application has a console available!
   std::cerr << m_err_msg << '\n';
 }
+
+// clang-format off
+std::string pe_normal_exception::get_error( ) const noexcept
+{
+  return m_err_msg;
+}
+// clang-format on

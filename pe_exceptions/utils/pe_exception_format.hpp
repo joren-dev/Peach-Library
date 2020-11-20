@@ -21,9 +21,10 @@ namespace peach::detail
     tm current_time { };
     localtime_s( &current_time, &t );
 
-    ss << "Exception occurred at: " << std::put_time( &current_time, "[%T]" )
-       << " on line: " << line_num << " in file: " << file_name << ".\nException details: ";
+    ss << std::put_time( &current_time, "[%T]" )
+       << " at LINE:FILE " << line_num << " : " << file_name << " ->\n\t\t{ ";
     ( ( ss << std::forward< Tys >( args ) << ' ' ), ... );
+    ss << " }\n";
 
     return ss.str( );
   }
