@@ -12,12 +12,7 @@ namespace peach
   template< typename... Tys > class ScopeGuard
   {
   public:
-    ScopeGuard( Tys&&... callables ) requires( ( std::same_as< std::invoke_result_t< Tys >, void > && ... ) )
-        : m_callables( std::make_tuple( std::forward< Tys >( callables )... ) )
-    {
-    }
-
-    ScopeGuard( Tys... callables ) requires( ( std::same_as< std::invoke_result_t< Tys >, void > && ... ) )
+    constexpr ScopeGuard( Tys... callables ) requires( ( std::same_as< std::invoke_result_t< Tys >, void > && ... ) )
         : m_callables( std::make_tuple( callables... ) )
     {
     }
