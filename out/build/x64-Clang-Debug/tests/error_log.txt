@@ -1,3 +1,0 @@
-[09:43:22] at (line:file) 11 : D:\Documents\Projects\Peach-Library\tests\main.cpp ->
-		{ asd 23 as  }
-
