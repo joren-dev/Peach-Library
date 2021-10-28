@@ -1,6 +1,7 @@
-/.idea
-/cmake-build-debug
-/build
-/.git
-/tests
-/.vs
+cmake-build-debug/
+.git/
+tests/
+.vs/
+out/
+build/
+.idea/

@@ -7,7 +7,7 @@ using namespace peach::detail;
 
 // clang-format off
 // Returning a c_str of m_err_msg is legal because `what()` can only be called as long as the pe_normal_exception 
-// object still exists. Make sure to copy the contents in case u want to use this outside the scope pe_normal_exception is available
+// object still exists. Make sure to copy the contents in case u want to use this outside the scope pe_normal_exception is available.
 const char* pe_normal_exception::what( ) const noexcept 
 { 
     return m_err_msg.c_str( ); 
