@@ -3,5 +3,7 @@ cmake-build-debug/
 tests/
 .vs/
 out/
+/out
+/build
 build/
 .idea/
