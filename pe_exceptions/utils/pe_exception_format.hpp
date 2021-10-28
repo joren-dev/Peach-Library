@@ -26,7 +26,7 @@ namespace peach::detail
     ( ( ss << std::forward< Tys >( args ) << ' ' ), ... );
     ss << " }\n\n";
 
-    return ss.str( );
+    return std::string { ss.str( ) };
   }
 
 } // namespace peach::detail

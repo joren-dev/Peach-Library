@@ -14,7 +14,8 @@
 namespace peach::detail
 {
   // Short info:
-  // Link docu:
+  // * Two format_error calls are required because the order favors base classes in the ctor init list
+  // Link docu: 
   class pe_normal_exception final : virtual public pe_base_exception
   {
   public:
@@ -22,25 +23,27 @@ namespace peach::detail
     explicit pe_normal_exception( const std::size_t line_num, const std::string& file_name,
                                   Tys&&... args )
         : m_err_msg( format_error( line_num, file_name, std::forward< Tys >( args )... ) ),
-          std::runtime_error { m_err_msg }
+          std::runtime_error { format_error( line_num, file_name, std::forward< Tys >( args )... ) }
+
     {
     }
 
     // clang-format off
     pe_normal_exception( const pe_normal_exception& ) noexcept = default;
-    pe_normal_exception( pe_normal_exception&& ) noexcept = delete;
+    pe_normal_exception( pe_normal_exception&& ) noexcept = default;
 
     pe_normal_exception& operator=( pe_normal_exception&& ) = delete;
     pe_normal_exception& operator=( const pe_normal_exception& ) = delete;
     // clang-format on
 
+    const char* what( ) const noexcept override;
     std::string get_error( ) const noexcept override;
     void print_to_console( ) const noexcept override;
 
     ~pe_normal_exception( ) = default;
 
   private:
-    const std::string m_err_msg;
+    std::string m_err_msg;
   };
 
 } // namespace peach::detail

@@ -29,10 +29,9 @@ namespace peach::detail
   };
 
   template< typename T >
-  std::ofstream& operator<<( std::ofstream& output_file,
-                             const T& rhs ) requires( std::derived_from< T, pe_base_exception > )
+  std::ostream& operator<<( std::ostream& output_file,
+                            const T& rhs ) requires( std::derived_from< T, pe_base_exception > )
   {
-
     output_file << rhs.get_error( );
 
     return output_file;

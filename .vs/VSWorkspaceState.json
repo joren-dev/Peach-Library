@@ -1,0 +1,10 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\pe_exceptions",
+    "\\pe_exceptions\\core",
+    "\\pe_exceptions\\utils"
+  ],
+  "SelectedNode": "\\pe_exceptions\\core\\pe_base_exception.hpp",
+  "PreviewInSolutionExplorer": false
+}

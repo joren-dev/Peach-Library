@@ -9,3 +9,5 @@ add_library(PeachLibrary STATIC
         )
 
 set_target_properties(PeachLibrary PROPERTIES LINKER_LANGUAGE CXX)
+
+add_subdirectory(tests)

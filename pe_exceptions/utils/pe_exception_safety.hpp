@@ -9,6 +9,8 @@ namespace peach::detail
 {
 
   // prevents possibility of a this pointer being passed in the format_error context
+  /* TODO : Figure out if this is still needed
+  
   template< typename T >
   inline std::ostream&
   operator<<( std::ostream& stream,
@@ -16,6 +18,8 @@ namespace peach::detail
   {
     return stream;
   }
+
+  */
 
   // clang-format off
   template< typename T > concept OutputStreamInsertable = requires( std::ostream& os, const T& arg )
