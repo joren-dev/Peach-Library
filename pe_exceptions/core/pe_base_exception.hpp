@@ -22,7 +22,7 @@ namespace peach::detail
     pe_base_exception& operator=( const pe_base_exception& ) = delete;
     // clang-format on
 
-    virtual std::string get_error( ) const noexcept = 0;
+    virtual const std::string& what_str( ) const noexcept = 0;
     virtual void print_to_console( ) const noexcept = 0;
 
     virtual ~pe_base_exception( ) { };
@@ -32,7 +32,7 @@ namespace peach::detail
   std::ostream& operator<<( std::ostream& output_file,
                             const T& rhs ) requires( std::derived_from< T, pe_base_exception > )
   {
-    output_file << rhs.get_error( );
+    output_file << rhs.what_str( );
 
     return output_file;
   }

@@ -14,7 +14,7 @@
 namespace peach::detail
 {
   // Short info:
-  // * Two format_error calls are required because the order favors base classes in the ctor init list
+  // * Two format_error calls are required because the order favors base classes(std::runtime_error) in the ctor init list
   // Link docu: 
   class pe_normal_exception final : virtual public pe_base_exception
   {
@@ -37,7 +37,7 @@ namespace peach::detail
     // clang-format on
 
     const char* what( ) const noexcept override;
-    std::string get_error( ) const noexcept override;
+    const std::string& what_str( ) const noexcept override;
     void print_to_console( ) const noexcept override;
 
     ~pe_normal_exception( ) = default;

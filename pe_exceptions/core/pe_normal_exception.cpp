@@ -22,7 +22,7 @@ void pe_normal_exception::print_to_console( ) const noexcept
 }
 
 // clang-format off
-std::string pe_normal_exception::get_error( ) const noexcept
+const std::string& pe_normal_exception::what_str( ) const noexcept
 {
   return m_err_msg;
 }
