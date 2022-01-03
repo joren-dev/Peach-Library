@@ -23,11 +23,15 @@ namespace peach
       throw std::runtime_error( "" );
 
     max_size_ = new_size;
-    for ( uintptr_t*& i : pointer_ )
+    for ( auto& entry : pointer_ )
     {
-      uintptr_t offset { (uintptr_t)((uintptr_t)i - (uintptr_t)old_start) };
-      i = reinterpret_cast< uintptr_t* >( start_ + offset );
+      uintptr_t offset { (uintptr_t)( (uintptr_t)entry->GetPointer() - (uintptr_t)old_start ) };
+      entry->GetPointer() = reinterpret_cast< uintptr_t* >( start_ + offset );
     }
-
   }
+
+  MemoryPool::MemoryPoolEntryBase::~MemoryPoolEntryBase( ) = default;
+  MemoryPool::MemoryPoolEntryBase::MemoryPoolEntryBase( uintptr_t* const pointer ) : ptr_(pointer) {}
+  uintptr_t*& MemoryPool::MemoryPoolEntryBase::GetPointer( ) noexcept { return ptr_; }
+  const uintptr_t* const & MemoryPool::MemoryPoolEntryBase::GetPointer( ) const noexcept { return ptr_; }
 } // namespace peach
