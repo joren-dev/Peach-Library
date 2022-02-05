@@ -1,5 +1,5 @@
-#ifndef PE_EXCEPTION_SAFETY_HPP
-#define PE_EXCEPTION_SAFETY_HPP
+#ifndef PEACH_EXCEPTION_SAFETY_HPP
+#define PEACH_EXCEPTION_SAFETY_HPP
 
 #include <concepts>
 #include <ostream>
@@ -51,4 +51,4 @@ namespace peach::detail
 
 } // namespace peach::detail
 
-#endif // PE_EXCEPTION_SAFETY_HPP
+#endif // PEACH_EXCEPTION_SAFETY_HPP

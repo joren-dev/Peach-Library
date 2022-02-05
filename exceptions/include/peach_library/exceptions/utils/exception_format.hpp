@@ -1,5 +1,5 @@
-#ifndef PE_EXCEPTION_FORMAT_HPP
-#define PE_EXCEPTION_FORMAT_HPP
+#ifndef PEACH_EXCEPTION_FORMAT_HPP
+#define PEACH_EXCEPTION_FORMAT_HPP
 
 #include <ctime>
 #include <iomanip>
@@ -7,7 +7,7 @@
 #include <string>
 #include <utility>
 
-#include "pe_exception_safety.hpp"
+#include "exception_safety.hpp"
 
 namespace peach::detail
 {
@@ -31,4 +31,4 @@ namespace peach::detail
 
 } // namespace peach::detail
 
-#endif // PE_EXCEPTION_FORMAT_HPP
+#endif // PEACH_EXCEPTION_FORMAT_HPP

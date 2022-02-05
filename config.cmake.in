@@ -1,0 +1,15 @@
+@PACKAGE_INIT@
+
+if(@COMPONENT_TARGETS_ENABLED@)
+  set(_supported_components exceptions)
+
+  foreach(_comp ${peach_library_FIND_COMPONENTS})
+    if(NOT _comp IN_LIST _supported_components)
+      set(peach_library_FOUND False)
+      set(peach_library_NOT_FOUND_MESSAGE "Unsupported component: ${_comp}")
+    endif()
+    include("${CMAKE_CURRENT_LIST_DIR}/peach_library-${_comp}-targets.cmake")
+  endforeach()
+else()
+  include("${CMAKE_CURRENT_LIST_DIR}/peach_library-targets.cmake")
+endif()
