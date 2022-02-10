@@ -1,9 +1,6 @@
 set(component exceptions)
 
-add_library(${component} STATIC
-    src/core/normal_exception.cpp
-	src/exception.cpp
-)
+add_library(${component} STATIC	src/exception.cpp)
 
 target_compile_features(${component} PRIVATE cxx_std_20)
 
